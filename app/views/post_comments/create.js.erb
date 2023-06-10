@@ -1,0 +1,4 @@
+<!--$(".comments-area").html("<#%= j(render 'post_comments/comment', books: @books, post_comment: @post_comment) %>")-->
+$(".comments-area").val('')
+$(".comments-count").html("<%= j("コメント数: #{@book.post_comments.count}") %>")
+$('.lists').html("<%= j(render "post_comments/lists", book: @book) %>");

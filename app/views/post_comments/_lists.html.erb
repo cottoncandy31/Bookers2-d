@@ -1,0 +1,17 @@
+<table>
+<% book.post_comments.each do |post_comment| %>
+<tr>
+    <th>
+      <%= image_tag book.user.get_profile_image, size:"50x50" %><br>
+      <%= link_to book.user.name, user_path(book.user.id) %>
+    </th>
+    <th><%= post_comment.comment %></th>
+    <th>
+      <!--#コメント削除する"Destroy"のところに、remote: trueを追記します-->
+      <% if post_comment.user == current_user %>
+      <%= link_to 'Destroy', book_post_comment_path(post_comment.book, post_comment), method: :delete, data: { confirm: '本当に消しますか？' }, remote: true, class: "btn btn-sm btn-danger" %>
+      <% end %>
+    </th>
+　　     　　  </tr>
+<% end %>
+</table>
