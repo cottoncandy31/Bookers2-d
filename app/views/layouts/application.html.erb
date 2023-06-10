@@ -8,12 +8,23 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
   <body>
     <%= render 'layouts/header' %>
+    
       <main>
         <p id="notice"><%= notice %></p>
+        
+        <!--<#%= render 'search', user: current_user %>-->
+        
+        <% if user_signed_in? %>
+          <%= render 'tagsearches/tagsearch' %>
+        <% end %>
+        
         <%= yield %>
       </main>
+      
     <%= render 'layouts/footer' %>
   </body>
+  
 </html>

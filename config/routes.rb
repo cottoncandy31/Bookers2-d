@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   end
   
   get "search" => "searches#search"
+  #9-dで追加
+  get 'tagsearches/search', to: 'tagsearches#search'
 end

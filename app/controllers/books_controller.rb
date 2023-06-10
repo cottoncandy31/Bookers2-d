@@ -74,7 +74,7 @@ class BooksController < ApplicationController
   private
   
   def book_params
-    params.require(:book).permit(:title, :body, :image, :star)#ここのstar
+    params.require(:book).permit(:title, :body, :profile_image, :star, :category)#ここのstar
   end
   
 end
